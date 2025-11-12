@@ -7,13 +7,9 @@ fun isValid(word: String): Boolean {
     }
 }
 
-fun readWordList(filename: String): MutableList<String> {
-    
-}
+fun readWordList(filename: String): MutableList<String> = File(filename).readlines()
 
-fun pickRandomWord(words: MutableList<String>): String {
-
-}
+fun pickRandomWord(words: MutableList<String>): String = words.random()
 
 fun obtainGuess(attempt: Int): String {
 
