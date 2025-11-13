@@ -37,7 +37,7 @@ fun evaluateGuess(guess: String, target: String): List<Int> {
 fun displayGuess(guess: String, matches: List<Int>) {
     var output = ""
     for (n in guess.indices) {
-        if (guess[n] == matches[n]) {
+        if (matches[n] == 1) {
             output += guess[n]
         }
         else {
