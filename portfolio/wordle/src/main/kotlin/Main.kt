@@ -5,7 +5,12 @@ fun main() {
   
   var attempt = 1
   while (attempt <= 10) {
-    val guess = obtainGuess(attempt)
+    var valid = false
+    var guess = ""
+    while (valid == false) {
+        guess = obtainGuess(attempt)
+        valid = isValid(guess, wordsList)
+    }
     val matches = evaluateGuess(guess, answer)
     val output = displayGuess(guess, matches)
     if (0 in matches) {

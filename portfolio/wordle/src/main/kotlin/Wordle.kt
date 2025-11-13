@@ -1,7 +1,7 @@
 import java.io.File
 
-fun isValid(word: String): Boolean {
-    if (word.length == 5) {
+fun isValid(word: String, wordList: MutableList<String>): Boolean {
+    if (word.length == 5 && word in wordList) {
         return true
     }
     else {
@@ -14,13 +14,8 @@ fun readWordList(filename: String): MutableList<String> = File(filename).readLin
 fun pickRandomWord(words: MutableList<String>): String = words.random()
 
 fun obtainGuess(attempt: Int): String {
-    var valid = false
-    var guess = ""
-    while (valid == false) {
-        print("Attempt $attempt:")
-        guess = readln()
-        valid = isValid(guess)
-    }
+    print("Attempt $attempt:")
+    var guess = readln()
     return guess
 }
 
@@ -47,5 +42,5 @@ fun displayGuess(guess: String, matches: List<Int>) {
             output += "?"
         }
     }
-    print(output)
+    println(output)
 }
