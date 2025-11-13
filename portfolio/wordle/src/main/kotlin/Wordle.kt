@@ -9,7 +9,7 @@ fun isValid(word: String): Boolean {
     }
 }
 
-fun readWordList(filename: String): MutableList<String> = File(filename).readLines()
+fun readWordList(filename: String): List<String> = File(filename).readLines()
 
 fun pickRandomWord(words: MutableList<String>): String = words.random()
 
@@ -25,7 +25,7 @@ fun obtainGuess(attempt: Int): String {
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> {
-    val correct = listOf<String>()
+    var correct = listOf<Int>()
     for (n in 0..target.length) {
         if (guess[n]==target[n]) {
             correct.add(1)
