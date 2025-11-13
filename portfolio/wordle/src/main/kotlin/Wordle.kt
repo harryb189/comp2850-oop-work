@@ -1,3 +1,5 @@
+import java.io.File
+
 fun isValid(word: String): Boolean {
     if (word.length == 5) {
         return true
@@ -13,16 +15,17 @@ fun pickRandomWord(words: MutableList<String>): String = words.random()
 
 fun obtainGuess(attempt: Int): String {
     var valid = false
+    var guess = ""
     while (valid == false) {
         print("Attempt $attempt:")
-        val guess = readln()
+        guess = readln()
         valid = isValid(guess)
     }
     return guess
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> {
-    val correct = listof()
+    val correct = listOf()
     for (n in 0..target.length) {
         if (guess[n]==target[n]) {
             correct.add(1)
