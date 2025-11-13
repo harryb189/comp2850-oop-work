@@ -12,13 +12,19 @@ fun readWordList(filename: String): MutableList<String> = File(filename).readlin
 fun pickRandomWord(words: MutableList<String>): String = words.random()
 
 fun obtainGuess(attempt: Int): String {
-    print("Attempt $attempt:")
-    val guess = readln()
+    var valid = false
+    while (valid == false) {
+        print("Attempt $attempt:")
+        val guess = readln()
+        valid = isValid(guess)
+    }
     return guess
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> {
-
+    for (n in 0..target.length) {
+        
+    }
 }
 
 fun displayGuess(guess: String, matches: List<Int>) {
