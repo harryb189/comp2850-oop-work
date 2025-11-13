@@ -22,11 +22,27 @@ fun obtainGuess(attempt: Int): String {
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> {
+    val correct = listof()
     for (n in 0..target.length) {
-        
+        if (guess[n]==target[n]) {
+            correct.add(1)
+        }
+        else {
+            correct.add(0)
+        }
     }
+    return correct
 }
 
 fun displayGuess(guess: String, matches: List<Int>) {
-
+    var output = ""
+    for (n in guess.indices) {
+        if (guess[n] == matches[n]) {
+            output += guess[n]
+        }
+        else {
+            output += "?"
+        }
+    }
+    print(output)
 }
