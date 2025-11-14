@@ -19,4 +19,14 @@ class WordleTest : StringSpec({
         withClue("Word=SILIE") { isValid("SILIE") shouldBe false}
         withClue("Word=TREE8") { isValid("Treee") shouldBe false}
     }
+
+    "All words read from the file into a list" {
+        val file = tempFile()
+        val testWords = listOf("football", "rugby", "boxing")
+        file.writeLines(testWords)
+        {readWordList(file) shouldBe ("football", "rugby", "boxing")}
+
+    }
+
+
 })
