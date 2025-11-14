@@ -20,6 +20,10 @@ fun main() {
         print("Correct!")
         break
     }
+  if (attempt > 10) {
+    println("You have run out of guesses!")
+    print("The word was ${answer}")
+  }
 
   }
 }
