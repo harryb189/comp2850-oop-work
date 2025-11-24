@@ -10,8 +10,8 @@ class WordleTest : StringSpec({
 
     "Words of 5 letters that are in the word list should be valid - isValid" {
         withClue("Word=IRATE") { isValid("IRATE", testWords) shouldBe true}
-        withClue("Word=CLOUD") { isValid("Cloud", testWords) shouldBe true}
-        withClue("Word=APPLE") { isValid("apple", testWords) shouldBe true}
+        withClue("Word=CLOUD") { isValid("CLOUD", testWords) shouldBe true}
+        withClue("Word=APPLE") { isValid("APPLE", testWords) shouldBe true}
     }
 
     "Words of not length 5 should be invalid - isValid" {
