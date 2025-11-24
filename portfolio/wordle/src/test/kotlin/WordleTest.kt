@@ -25,9 +25,9 @@ class WordleTest : StringSpec({
     }
 
     "All words read from the file into a list - readWordList" {
-        val file = tempfile()
-        val testWords = listOf("football", "rugby", "boxing")
-        file.writeLines(testWords)
+        var testFilePath = "/workspaces/comp2850-oop-work/portfolio/wordle/data/testWords.txt"
+        val file = File(testFilePath)
+        val testWords = listOf("RUGBY", "IRATE", "ALERT", "MONEY", "TREES", "SWEET", "DRINK")
         readWordList(file) shouldBe testWords
 
     }
