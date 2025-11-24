@@ -6,7 +6,7 @@ import io.kotest.matchers.collections.shouldContain
 @Suppress("unused")
 class WordleTest : StringSpec({
 
-    val testWords = mutableListOf("IRATE, CLOUD, APPLE, TREES, CLEAN, MONEY, RUGBY, SOLID")
+    val testWords = mutableListOf("IRATE", "CLOUD", "APPLE", "TREES", "CLEAN", "MONEY", "RUGBY", "SOLID")
 
     "Words of 5 letters that are in the word list should be valid - isValid" {
         withClue("Word=IRATE") { isValid("IRATE", testWords) shouldBe true}
