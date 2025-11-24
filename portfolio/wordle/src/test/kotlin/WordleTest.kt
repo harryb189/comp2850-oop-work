@@ -1,6 +1,7 @@
 import io.kotest.assertions.withClue
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.collections.shouldContain
 
 @Suppress("unused")
 class WordleTest : StringSpec({
@@ -24,7 +25,7 @@ class WordleTest : StringSpec({
     }
 
     "All words read from the file into a list - readWordList" {
-        val file = tempFile()
+        val file = tempfile()
         val testWords = listOf("football", "rugby", "boxing")
         file.writeLines(testWords)
         readWordList(file) shouldBe testWords
@@ -32,7 +33,7 @@ class WordleTest : StringSpec({
     }
 
     "pickRandomWord should return random word from entered list" {
-        val words = listOf("rugby", "football", "boxing", "golf", "hockey", "mma", "sprinting", "american football")
+        val words = mutableListOf("rugby", "football", "boxing", "golf", "hockey", "mma", "sprinting", "american football")
         words shouldContain pickRandomWord(words)
     }
 
